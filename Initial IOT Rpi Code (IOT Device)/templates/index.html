@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> GPIO Control Web App </title>
+</head>
+<body>
+<h1>LED Control</h1>
+
+<h3> RED LED ==> <a href="#" onclick="pinMode('/ledRed/on')" >TURN ON</a> 
+<a href="#" onclick="pinMode('/ledRed/off')" >TURN OFF</a></h3>
+
+<h3> YELLOW LED ==> <a href="#" onclick="pinMode('/ledYellow/on')">TURN ON</a> 
+<a href="#" onclick="pinMode('/ledYellow/off')"  >TURN OFF</a></h3>
+
+<h3> WHITE LED ==> <a href="#" onclick="pinMode('/ledWhite/on')" >TURN ON</a> 
+<a href="#" onclick="pinMode('/ledWhite/off')" >TURN OFF</a></h3>
+
+<h3> BUZZER LED ==> <a href="#" onclick="pinMode('/buzzer/on')" >TURN ON</a> 
+<a href="#" onclick="pinMode('/buzzer/off')" >TURN OFF</a></h3>
+
+
+</body>
+</html>
+<script src="static/jquery-3.2.1.js"></script>
+<script>
+	function pinMode(x){
+		$.ajax({
+			type:'POST',
+			url:x
+		});
+	}
+</script>
